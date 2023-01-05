@@ -1,7 +1,7 @@
     body {
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    background-color: lavender;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
   }
   
   .page-container {
@@ -9,3 +9,8 @@
     margin-top: 5rem;
     margin: auto;
   }
+
+  h1 {
+    text-align: center;
+  }
+

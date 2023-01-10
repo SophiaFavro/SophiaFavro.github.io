@@ -12,9 +12,22 @@
 
   h1 {
     text-align: center;
-    
-  }
-  .links {
-    font-size: large;
+    font-size: 4rem;
+    color: black;
+    transition-property: color;
+    transition-duration: 3s;
+    transition-delay: 1s;
+    transition-property: font-size;
   }
 
+  h1:hover {
+    color: rgb(231, 146, 214);
+    font-size: 3rem;
+  }
+
+  .links {
+    font-size: 2rem;
+  }
+  a {
+    padding: 3.5rem;
+  }

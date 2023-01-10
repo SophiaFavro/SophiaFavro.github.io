@@ -1,0 +1,20 @@
+.page-container {
+    width: 80%;
+    margin-top: 5rem;
+    margin: auto;
+  }
+
+body {
+    background-color: rgb(192, 192, 238);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+  }
+
+  img {
+    size: 25px;
+  }
+
+  .bio { 
+    align-content: center;
+    font-size: large;
+  }

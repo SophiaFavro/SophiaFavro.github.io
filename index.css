@@ -1,5 +1,5 @@
     body {
-    background-color: lavender;
+    background-color: rgb(192, 192, 238);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
   }
@@ -12,5 +12,9 @@
 
   h1 {
     text-align: center;
+    
+  }
+  .links {
+    font-size: large;
   }
 

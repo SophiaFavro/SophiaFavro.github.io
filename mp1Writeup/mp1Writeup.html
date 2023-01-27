@@ -20,9 +20,25 @@
         <p>I knew I wanted there to be a popup, so I used the "hello world" example and customized it for my project.<br /> 
             I did this by adding my own icon and adusting the styling, manifest, html, and JavaScript console log.<br />
             <img src="/images/customizedIconStage.jpeg" /> <br />
-            After the popup was complete it was time to start working on the to-do list.
+            After the popup was complete it was time to start working on the to-do list. I started out by creating a button to add tasks to the list. <br />
+            As well as creating an input for the user to be able to type in their task. <br />
+            <img src="/images/toDoListButton.jpeg" /> <br />
+            I then needed to create an event handler that would be able to listen for when the "add task" button was clicked in order to take the input, <br />
+            and add it to the list in the popup. To do this it was time to start working in my js file. I started by creating variables for the button, user input, and list. <br />
+
         </p>
         <h3>Issue Deep-Dive</h3>
+        <p>Once I had added the button for adding a task and input I ran into an issue having the items added to the list and visible in the popup. <br />
+            I was able to type in a task and click the "add task" button, but it would just dissapear instead of being added below. To go about fixing this
+            I decided to add "console.log" within my event hadler for clicking on the button that would log the input(what was typed in by user).<br />
+            <img src="/images/MP1IssueConsoleLog.jpg" /> <br />
+            As you can see the console was logging it, so I knew that my event handler was working. I thought maybe the length had something to do with why it wasn't appearing, <br />
+            but when I tried just "add" it still wasn't appearing. Due to this I decided to look and see if there was an issue in my html or css files instead of my js file. <br />
+            I looked line by line to make sure that everything was matching and there were no syntax issues. While doing this in the html I saw my empty list ("ul") tags and thought 
+            the list is empty and it should be adding the list item. In this moment I realized that I may have appended the listButton and listText to the listItem, but had not appended
+            the listItem to my list. Meaning that my main parent node for the to-do list had no children, but the child was still being made. Everything was working and logging and the
+            issue was that they just needed to be connected.
+        </p>
         <h3>Ideas and Future Work</h3>
         <ul class="ideas">
             <li>Illustrate icon and add icon choices</li>
@@ -33,7 +49,9 @@
         </ul>
         <h3>Kudos</h3>
         <ul class="ideas">
-            <li>mdn web document on manipulating documents was very helpful for figuring out how to do the to-do list</li>
+            <li>mdn web document on manipulating documents was very helpful for figuring out how to do the to-do list. I was able to read
+              the document then try the shopping list example to test my understanding. 
+            </li>
         </ul>
     </div>
   </body>

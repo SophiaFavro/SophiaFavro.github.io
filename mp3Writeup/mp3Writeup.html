@@ -31,7 +31,7 @@
             Below is a picture of the finished background. <br>
             <img src="/images/gameBackground.jpg" /> <br>
 
-            Now that the background was complete it was time to create the sprite that would be used to get across all the roads. 
+            Now that the background was complete it was time to create the sprite that would be used to get across all the roads. I created a spirit setup function 
         </p>
         <h3>Issue Deep-Dive</h3>
         <p>
@@ -44,7 +44,14 @@
             the function for movement and kept the spirit setup. When I ran it this time I was met with the original error of a white screen. I now started commenting out individual lines in this function to see <br>
             if there was a problem in the function that was causing the error. During this process I kept getting met with the error, so I thought it might have to do with the libaries not being imported correctly. 
             I started looking at my html and double checked that everything was correct in that file. It was so I just started looking through everything. I was then able to find when I hovered over the new Sprite 
-            line in the spirit setup function a popup appeared that said it did not recongize the command. I did not know how I missed this and realized that this was causing the issue.  
+            line in the spirit setup function a popup appeared that said it did not recongize the command. I did not know how I missed this and realized that this was causing the issue. I started to search and play <br>
+            around with how I could create a Sprite. I tried a different format, using createSprite, and added to the libraries I had in case there was something missing. None of this worked, so I tried to create a new Sprite
+            directly in the setup function and it worked. I now had to figure out why it would work when in the setup function, but not when I had it in the setupSpirit function I had. I tired changing the location of the 
+            setupSpirit function to be above the setup function, and tried to copy and pasting in case I was missing a spelling error. Nothing worked and I thought that I would need to ask for a second opinion I realized what the 
+            problem was-I had setupSpirit instead of spiritsetup. This was causing an issue as there can only be one setup function, and I think that by having the name start with setup it thought I was trying to add another. <br>
+            I was curious why you can only have one and found the responses to this stackoverflow explained it nicely.  <a href="https://stackoverflow.com/questions/56959733/how-does-the-setup-function-in-p5-js-work">stackoverflow link</a><br>
+            This issue was easy to fix, but it was very difficult for me to spot and forced me to have to stop and take a deeper look at all of my code. It reminded me of the importance of naming conventions, caused me to understand 
+            p5 better, and explore many possible solutions. Due to running into this issue I know that I will never use setup at the beginning of a function name when working with p5 and will be able to avoid this kind of error in the future. 
         </p>
         <h3>Ideas and Future Work</h3>
         <ul class="ideas">

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./mp3Writeup.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <h1 class="header">MP3 Writeup</h1>
+      <div class="links">
+        <a href="/cheatsheet/cheatsheet.html">Cheatsheet</a>
+        <a href="/index.html">Home</a>
+        <a href="/aboutMe/aboutMe.html">About Me</a>
+      </div>
+        <h3>Overview & Usage</h3>
+        <p>
+            This is a game where the player is a spirit trying to cross mulitple roads without getting hit by bad spirits. <br>
+            IMAGES OF GAME <br>
+            To play EXPLAIN GAMEPLAY<br>
+            To try it out visit GAME SITE LINK <br>
+            To download the source code visit the repository here: REPO LINK HERE
+        </p>
+        <h3>Development Process</h3>
+        <p>
+            I first started by setting npm and adding my index html and js files. <br>
+            From there I added the start script and ran the neccessary commands to create a web dev sever, <br>
+            so that I would be able to test my game as I worked on it. Once I had all of this I added I then <br>
+            added the neccessary packages. I needed P5.play and P5, so I linked to the cdn in the html as there were issues <br>
+            with trying to use npm install in order to add them. From there I decided to start off by creating my game background. <br>
+            To do this I first created the canvas in the setup function and used the draw function to set the background to green for grass. <br>
+            I then created the roads by using a forloop to create the rectangles and space them out evenly across the window and set the color to grey. <br>
+            Below is a picture of the finished background. <br>
+            <img src="/images/gameBackground.jpg" /> <br>
+
+            Now that the background was complete it was time to create the sprite that would be used to get across all the roads. 
+        </p>
+        <h3>Issue Deep-Dive</h3>
+        <p>
+            An issue I ran into when working on this project arose when I went to add the spirit. The spirit is a sprite that requires creating a function to set it up. <br>
+            I created a function to make the spirit and to set how it moves when the arrows are pressed. I then called these functions respectively in the setup and draw functions. <br>
+            Once I did this and ran the dev server to see if it worked, I was met with a white screen. I was not sure what was broken at first and started to debug. There were no errors, so 
+            I first started by commenting out the calls for the spirit functions to make sure that my background was working. When I did so the background was back and working correctly.<br>
+            From there I thought that there might be something wrong with spirit functions, so I checked what would happen if I commented at one function and tried running it with only one function called.<br>
+            When I commented out the spirit setup function the background still showed up, so I knew that there wasn't an error happening that VSCode wasn't catching when it ran. Once I commented out the 
+            the function for movement and kept the spirit setup. When I ran it this time I was met with the original error of a white screen. I now started commenting out individual lines in this function to see <br>
+            if there was a problem in the function that was causing the error. During this process I kept getting met with the error, so I thought it might have to do with the libaries not being imported correctly. 
+            I started looking at my html and double checked that everything was correct in that file. It was so I just started looking through everything. I was then able to find when I hovered over the new Sprite 
+            line in the spirit setup function a popup appeared that said it did not recongize the command. I did not know how I missed this and realized that this was causing the issue.  
+        </p>
+        <h3>Ideas and Future Work</h3>
+        <ul class="ideas">
+            <li>Add music</li>
+            <li>Add more designs to background, like trees, bushes, flowers, etc</li>
+            <li>Personalize the icons with my own images</li>
+        </ul>
+        <h3>Kudos</h3>
+        <ul class="ideas">
+            <li>
+            </li>
+        </ul>
+    </div>
+  </body>
+</html>

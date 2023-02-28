@@ -1,5 +1,5 @@
     body {
-    background-color: rgb(192, 192, 238);
+    background-color: rgb(223, 223, 253);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
   }
@@ -18,16 +18,20 @@
     transition-duration: 3s;
     transition-delay: 1s;
     transition-property: font-size;
+    font-family: Times;
   }
 
   h1:hover {
     color: rgb(231, 146, 214);
     font-size: 3rem;
+    
   }
 
   .links {
     font-size: 2rem;
   }
-  a {
-    padding: 3.5rem;
+
+  li {
+    margin-bottom: 2rem;
+    font-family: "times new roman";
   }

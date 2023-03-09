@@ -17,21 +17,73 @@
         </p>
         <h3>Development Process</h3>
         <p> 
+            I first Ran npm init, added index.html, index.js, and added start script to create local server to run it.<br>
+            I then Created canvas and made it to be proportionate to the window size. <br>
+            From there went to create the shape and color picker. For the shape picker <br>
+            I created the shapes and decided that in order to have them choose the shape <br>
+            they would hit a key. In order to do this I added the key to press in order to<br>
+            select the shape. Then for the color picker I originally planned to have set <br>
+            colors to choose from, but I was able to find a color picker in the p5 documentation<br>
+            and decided to do that instead. Once I had added the color picker my project now looked like this.<br>
+            <img src="/images/finalPrototypePickersPic.jpg">
+            <br>
+            Now it was time to allow users to draw on the canvas. To do this I first played around <br>
+            with mouse dragged and shapes as I had seen this in the p5 documentation. I created a <br>
+            mouseDragged function that would fill with the color picker selected color and drew circles.<br> 
+            Once this worked and I was able to switch between colors and have it draw the circles it<br>
+            was time to have it draw a line instead. To do this I first tried changing the function <br>
+            to be mousePressed and having the line be with mouseX, mouseY, pmouseX, pmouseY. This did<br>
+            not work, so I went back to mouseDragged and added in an if statement to check if mouse is<br>
+            pressed then draw the line I tried before. This worked and I was able to draw the lines, but<br>
+            it was not using the color picker color. At first I tried moving around the fill, but when <br>
+            this did not work I tried just setting fill to a set color which also did not work. I went <br>
+            back to the p5 documentation and was able to find that stroke is how you set the color of lines.<br>
+            I had misread before and though that this was how you set the thickness of the line, so I was<br>
+            glad I went back and checked. Once I added the stroke with the color picker color I was able <br>
+            to draw continuous lines and change the color in between using the color picker. The final piece<br>
+            I needed to complete this prototype was to add a way for the user to save the canvas to their computer.<br>
+            Thanks to a tip from Hannah I knew that p5 could do this, so I went to the p5 documentation to<br>
+            see how to add this feature. I first created a save button and set its position below the future<br>
+            shapes and color picker. I then created a saveCanvas function that used save(“filename”); in order<br>
+            to save the canvas as image to the users computer. Then I added a statement for when the button is<br>
+            pressed by the mouse it uses the saveCanvas function. When I ran npm start to see if it worked nothing<br>
+            happened when I pushed the button. I used inspect to see what was happening when I pushed the button <br>
+            and saw that I was getting a typeError. I was not sure what was causing this, so I looked at a p5 example<br>
+            where they had the function as saveImage instead of saveCanvas, so I decided to switch mine to see if it<br>
+            would fix the issue. Once I changed the function to saveImage the save button worked. I'm not sure why <br>
+            this happened, but wonder if it is because I am trying to have the canvas save as an image and not another<br>
+            canvas, but plan to do some more digging. Once I had the save button working my prototype was complete and<br>
+            now looked like this<br>
+            <img src="/images/finishedPrototypePic.jpg">
+            <br>
+            Now I needed to bundle with rollup in order to get it ready to deploy. To do this I installed rollup,<br>
+            installed node-resolve plugin, installed the copy plugin, created a config file for rollup, added a <br>
+            build script to the scripts in package.json, and ran build. From there I needed to get it ready to push<br>
+            to GitHub, so I added a git ignore file to ignore the files that contained what was already in my<br>
+            code(ie node_modules and dist) and pushed to GitHub. Finally, I needed to deploy my site. To do this <br>
+            I installed gh-pages, added a deploy script to package.json scripts, and in the terminal put rpm run deploy.<br>
+            When I first went nothing was showing up and when I inspected I found some issues that led me to make some<br>
+            changes to my config file as I knew from the game design project that since I was using cdn for the<br>
+            packages I needed to add treeshake false. Finally, I went to the site and was able to see my site up and running. 
         </p>
         <h3>Issue Deep-Dive</h3>
-        <p> 
+        <p>
+            I tried to add a rectangle and was unable to. At first I thought it was because I was in the setup<br>
+            function. This confused me as I had a circle in the setup function that was working. At first I thought<br>
+            it may be due to the fill and it was not filling the second shape, so I added another fill before the <br>
+            second shape. When this didn't fix it I thought it may be due to it being a different shape, and tried<br>
+            adding another circle instead. Once I did this the second circle appeared. Now that I knew it could work<br>
+            I decided to look at the rectangle documentation and see if it wasn't working with the rectangle because<br>
+            I had not declared it correctly. When I did this I quickly realized that I had written “rectangle” and not <br>
+            “rect” when I was trying to draw it. Once I tried again with “rect” the rectangle was showing up. It reminded<br>
+            me of how syntax errors can cause issues and take time to fix when not caught. 
         </p>
         <h3>Ideas and Future Work</h3>
-        <ul class="ideas">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+        <p>Explained in project scope below </p>
         <h3>Kudos</h3>
         <ul class="ideas">
-            <li></li>
-            <li></li>
+            <li>P5 documentation</li>
+            <li>Hannah's tip about save in p5 documentation</li>
         </ul>
         <h3>Project Scope</h3>
         <p>
@@ -41,6 +93,14 @@
         </p>
         <h3>Implementation Plan</h3>
         <p>
+            When looking at how to select shapes I originally thought that this would be easier<br>
+            than drawing lines and having it save. However, when looking at how to do this I wasn't<br>
+            able to find anything in the documentation where I could have it switch between shapes, but <br>
+            quickly found a way to draw lines. Thus, I decided to switch to have the choosing shapes<br>
+            be for the final project and included the line drawing as the default in this one(the prototype).<br>
+            The other change came when looking at having set colors. When looking for the shape picker <br>
+            I was able to find a color picker in the p5 documentation, and realized that I could add<br>
+            that now instead of taking the time to do the set colors only to replace it later. 
         </p>
     </div>
   </body>

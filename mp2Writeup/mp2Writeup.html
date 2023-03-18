@@ -17,11 +17,41 @@
         <a href="/aboutMe/aboutMe.html">About Me</a>
       </div>
         <h3>Overview & Usage</h3>
-        <p>
-
+        <p> For this project I used p5's web editor in order to create 6 different sketches
+          that utilized the possiblities of what you can do with p5. See the gallery to find
+          the links to all of the sketches: <a href="/gallery/gallery.html">Gallery</a>
         </p>
         <h3>Development Process</h3>
         <p>
+          <h5>Sketch 1</h5>
+          For the first sketch since it needed to be static, but still have some complexity I 
+          took what I did for the grid in my final project and adjusted it so that it drew
+          rectangles instead of lines. 
+          <h5>Sketch 2</h5>
+          For sketch 2 the only requirement was that there needed to be some randomness so that
+          every time the page is reloaded there is something different about the sketch. To do 
+          this I first tried just doing the random piece by creating an array of random numbers
+          to be the changing size. I did this at first, so that I could judge if it was changing 
+          by having the numbers be very different(1, 100, 50), but once I saw it was I switched 
+          it to just random(max size); so that their could be more variation. Once I did this I 
+          added my shapes, set their colors, and had their size be determined by the random selection. 
+          <h5>Sketch 3</h5>
+          This sketch needed to have an infinite loop. I decided that I wanted to have growing circles
+          that started out small and grew over time. To do this I first start with one circle in the center
+          where I had the radius be a variable to had .1 added to everytime the function was called. I 
+          then called that function in the draw function and it worked. I then changed the background to black,
+          created an array of shades of purple called ranColor, and had the fill value be random(ranColor) 
+          that was called before the growing cirlce function. Finally, to finish the sketch I decided to add 
+          more circles to grow in the growing circle function that were like the first one execpt for 
+          different x and y values.  
+          <h5>Sketch 4</h5>
+          For this sketch the focus was having change based on user input. Since I had created the drawing app
+          for my final project I was pretty familiar with how to do this. I decided to create a function for 
+          mouseDragged where if the mouse is pressed then it draws a circle where their mouse is with a 25 radius. 
+          To add more user input I also have the color set to change based on mouseX and mouseY. Finally, I wanted
+          this to look like mulitple circles, so I set stroke to white to make then stand out on the black background.  
+          <h5>Sketch 5</h5>
+          <h5>Sketch 6</h5>
         </p>
         <h3>Issue Deep-Dive</h3>
         <p> 
@@ -29,14 +59,10 @@
         <h3>Ideas and Future Work</h3>
         <ul class="ideas">
             <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
         </ul>
         <h3>Kudos</h3>
         <ul class="ideas">
-            <li></li>
-            <li></li>
+            <li>All the examples and documentation link from the brief</li>
         </ul>
     </div>
   </body>

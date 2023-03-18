@@ -25,6 +25,37 @@
           you want to start it. Below is a sample image. <br />
           <img src="/images/transistionExample.jpeg" />
         </p>
+        <h2>Dev Toolchain</h2>
+        <p>
+          key idea: use whenever adding packages for projects 
+            <h3>Setup</h3>
+            <ul>
+              <li>run npm init in terminal to intialize npm project</li>
+              <li>install packages you'll be using for project</li>
+              <li>create html and js files and do some test code</li>
+              <li>install npm install --save-dev @web/dev-server</li>
+              <li>add following to scrips in package.json: "start": "web-dev-server --node-resolve --open --watch"</li>
+              <li>run npm run start in terminal to run app locally</li>
+            </ul>
+            <h3>Build with Rollup</h3>
+            <ul>
+              <li>install rollup by npm install rollup --save-dev in terminal</li>
+              <li>npm install @rollup/plugin-node-resolve --save-dev in terminal</li>
+              <li>npm install rollup-plugin-copy --save-dev in terminal</li>
+              <li>create rollup.config.js file</li>
+              <li>add "build": "rollup --config" to scripts in package.json</li>
+              <li>run npm run build in terminal to build app</li>
+              <li>create .gitignore file with node_modules/ dist/ in it</li>
+              <li>push to github to save work</li>
+            </ul>
+            <h3>Deploy with GH-Pages</h3>
+            <ul>
+              <li>install gh-pages by doing npm install gh-pages --save-dev in terminal</li>
+              <li>add "deploy": "npm run build && gh-pages -d dist" into package.json scripts</li>
+              <li>run npm run deploy to deploy app</li>
+              <li>to see app visit: (gitHub username).github.io/(repo name)</li>
+            </ul>
+        </p>
       </p>
     </div>
   </body>

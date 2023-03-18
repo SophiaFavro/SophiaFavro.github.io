@@ -8,6 +8,8 @@ body {
     background-color: rgb(223, 223, 253);
     font-family: "times new roman";
     color: black;
+    margin: 0 auto;
+    max-width: 50em;
   }
 
   img {

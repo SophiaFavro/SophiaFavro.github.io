@@ -1,6 +1,8 @@
     body {
     background-color: rgb(223, 223, 253);
     color: black;
+    margin: 0 auto;
+    max-width: 50em;
   }
   
   .page-container {

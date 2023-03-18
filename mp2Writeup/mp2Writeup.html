@@ -51,14 +51,40 @@
           To add more user input I also have the color set to change based on mouseX and mouseY. Finally, I wanted
           this to look like mulitple circles, so I set stroke to white to make then stand out on the black background.  
           <h5>Sketch 5</h5>
+          The requirement for this sketch was that it needs to output audio. When looking at examples one that stood out
+          was the doorbell. I liked how it connected to something in the real world, and decided to do something similar 
+          that would take the user interacting with it in order to play the sound. I decided I wanted to make windchimes 
+          that when clicked play a windchime sound. To do this I first found my sound and loaded into a variable called sample. 
+          From their I decided to create the windchime sketch using rectangles. Then I created a function for when the mouse 
+          is clicked the windchime sample plays. 
           <h5>Sketch 6</h5>
+          Finally, for the last sketch since I needed to create audio and have a visual change based on user input I decided 
+          to take the sound from the windchime sketch and combine it with sketch 4. To do this I did the same audio setup I did 
+          in sketch 5 and added the function from sketch 4. Since I was checking if the mouse was pressed in the mouseDragged
+          function for sketch 4 I was able to put the sample.play() there to combine the two. When I ran the sketch I was able to
+          see that it was trying to play the sound and the color was changing and drawing the circles based on where the mouse was. 
+          The other change I I ended up making was the shape of the circle into a rectangle. I did this as I wanted to play around with the 
+          shape and see what I liked more aesthically. It was during this sketch that I came up with the future plan to create a meditation 
+          app, and think that this would be the sketch I would want to build off of, and aesthitics would be an important aspect for this and 
+          thought why not explore now. 
         </p>
         <h3>Issue Deep-Dive</h3>
         <p> 
+          I didn't really run into any issues, but one thing that was difficult was sketch 5. Having to create the sound
+          when trying to work in the editor does not work well if you have your own sound you want to use. To get around 
+          this I did everything how I thought it would work and then looked at the console to see if what I wanted to 
+          happen would happen on the event I had set. In my case I wanted the sound to play when the mouse was pressed. Even
+          though I could not have the sound I wanted to play I was able to see that when I ran the sketch and clicked it was 
+          trying to play the sound, but it could not find it. This means if I were to put this into a place where it could access
+          the audio then I would be confident that it would work. This was a case where I had to work around an issue and actually
+          learned how to reverse debug in order to figure out if my code would work instead of normal debugging where I
+          typically have to look for why is it broken. 
         </p>
         <h3>Ideas and Future Work</h3>
         <ul class="ideas">
-            <li></li>
+            <li>Create meditation app or extension using sound when clicked</li>
+            <li>music color palette creator</li>
+            <li>sound frequency changes the color of interactive sketch</li>
         </ul>
         <h3>Kudos</h3>
         <ul class="ideas">

@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/favicon_io/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div class="page-container">
@@ -17,74 +18,74 @@
       </div>
         <h3>Overview & Usage</h3>
         <p>
-            For the final project I created a drawing app where the user can draw lines, circles,<br>
-            squares, and rectangles. Along with this they can use a grid for guidelines, choose colors,<br>
-            erase, clear, and save their work. <br>
-            Here is a link to try it out:<a href="https://sophiafavro.github.io/DrawingApp/">Drawing App</a><br>
-            Here is a link to the repo containing the code for the app:<a href="https://github.com/SophiaFavro/DrawingApp">GitHub Repo</a>
+            For the final project I created a drawing app where the user can draw lines, circles,
+            squares, and rectangles. Along with this they can use a grid for guidelines, choose colors,
+            erase, clear, and save their work. 
+            <br>Here is a link to try it out:<a href="https://sophiafavro.github.io/DrawingApp/">Drawing App</a>
+            <br>Here is a link to the repo containing the code for the app:<a href="https://github.com/SophiaFavro/DrawingApp">GitHub Repo</a>
         </p>
         <h3>Development Process</h3>
-        <p>I started by setting up local dev toolchain by installing npm, and added my html and js files from the prototype.<br>
-            I decided when I showed others my prototype that I wanted the shapes to be buttons instead of key presses as<br>
-            the instructions for the key strokes stayed on the canvas when it was saved and wanted it to only be the picture.<br>
-            I talk about getting the button for drawing with line working in the issue deep dive. I struggled at first, but<br>
-            once I got the line version working it was easy to do it for the other shapes as well. Here is what it looked like:<br>
-            <img src="/images/DrawingAppWithButtons.jpg"><br>
-            I then wanted to add a clear button and used p5 clear in a function, so when the button was pressed it would <br>
-            clear the canvas. Next I created a slider using p5, thats value would determine the size of the lines/shapes.<br>
-            When I did this I needed to switch the position of the buttons and adjust the canvas. The reason being that <br>
-            when the slider was used it would cause shapes/lines to be drawn on it, and I didn't want that to ruin any <br>
-            of the users picture. Here is what it looked like once I made these changes: <br>
-            <img src="/images/drawingAppButtonsMoved.jpg"><br>
-            Next I started looking at how to make the page/elements responsive to changes in window size, but when I looked<br>
-            at p5's window resize I saw that it does this by running draw. The problem with this is that my project works by <br>
-            not doing anything in draw because if I were to then it would get rid of anything the user had created by redrawing<br>
-            the canvas. Thus, I decided to not include this as the apps setup is determined by the window width and height, and<br>
-            if a user wants a different size canvas I would rather they had to resize and reload then resize and lose their work.<br>
-            Since I was not including this I wanted to add more features to make the app more useful. To do this I decided to add<br>
-            an erase button. Originally I planned on using p5's erase, but when I looked through the reference documentation I<br>
-            didn't think it would work how I wanted it to. However, I came across an example where the person made it seem like <br>
-            it was erasing by drawing a line where the stroke was the background color. I decided to do this as well as it would <br>
-            fit in nicely with how I had the other buttons set up and just created the button so that when its pressed the currentShape<br>
-            would be "erase" and it would work like the line, but the color would be the background color. This allows the user to<br>
-            still use the size slider to change the size of the eraser, and it appears as if it is erasing. Due to the work I was <br>
-            able to accomplish in my prototype I decided to next pursue a stretch goal: I wanted to show and hide a grid that users<br>
-            could use to help them while drawing. - I first started exploring how I could hide and show something in p5. Found how<br>
-            someone did it with a button, and since I was already using buttons I decided to try it that way. I first created a button<br>
-            to show the grid, then a function that created a grid on the canvas, and a function that would show the grid when the<br>
-            button was pressed. Once I was able to show it I now needed to add a way to remove it. I added a remove grid button and <br>
-            created a remove grid function. At first I thought about using hide, but when playing around with using it, it wasn't working.<br>
-            I then thought about using erase here and tried that out by having it erase, then do the grid shape, and go to no erase. This<br>
-            worked by following the shape of the grid to erase over it. Here is what the grid looked like: <br>
-            <img src="/images/finalProjectWithGrid.jpg"><br>
-            The final piece on my implementation plan was to add a special effect to the line, but since I was able to have the shapes be<br>
-            stamped on or used to draw lines I decided against adding anything else as it could compromise the functionality of the others<br>
-            or would require putting code in the draw function which would wipe away all the other work a user had done. Thus, I decided<br>
-            to adjust some of the spacing to make it look nicer and got ready to deploy it. I followed the process I did for the prototype<br>
-            by using rollup to bundle my work, installed gh pages, and added the neccessary scripts to build and deploy my site. Once it was <br>
-            ready I ran npm run deploy in the terminal and my site was live. Here is a picture of the final deployed project: <br>
-            <img src="/images/drawingAppFinal.jpg"><br>
+        <p>I started by setting up local dev toolchain by installing npm, and added my html and js files from the prototype.
+            I decided when I showed others my prototype that I wanted the shapes to be buttons instead of key presses as
+            the instructions for the key strokes stayed on the canvas when it was saved and wanted it to only be the picture.
+            I talk about getting the button for drawing with line working in the issue deep dive. I struggled at first, but
+            once I got the line version working it was easy to do it for the other shapes as well. Here is what it looked like:
+            <br><img src="/images/DrawingAppWithButtons.jpg"><br>
+            I then wanted to add a clear button and used p5 clear in a function, so when the button was pressed it would 
+            clear the canvas. Next I created a slider using p5, thats value would determine the size of the lines/shapes.
+            When I did this I needed to switch the position of the buttons and adjust the canvas. The reason being that 
+            when the slider was used it would cause shapes/lines to be drawn on it, and I didn't want that to ruin any 
+            of the users picture. Here is what it looked like once I made these changes: 
+            <br><img src="/images/drawingAppButtonsMoved.jpg"><br>
+            Next I started looking at how to make the page/elements responsive to changes in window size, but when I looked
+            at p5's window resize I saw that it does this by running draw. The problem with this is that my project works by 
+            not doing anything in draw because if I were to then it would get rid of anything the user had created by redrawing
+            the canvas. Thus, I decided to not include this as the apps setup is determined by the window width and height, and
+            if a user wants a different size canvas I would rather they had to resize and reload then resize and lose their work.
+            Since I was not including this I wanted to add more features to make the app more useful. To do this I decided to add
+            an erase button. Originally I planned on using p5's erase, but when I looked through the reference documentation I
+            didn't think it would work how I wanted it to. However, I came across an example where the person made it seem like 
+            it was erasing by drawing a line where the stroke was the background color. I decided to do this as well as it would 
+            fit in nicely with how I had the other buttons set up and just created the button so that when its pressed the currentShape
+            would be "erase" and it would work like the line, but the color would be the background color. This allows the user to
+            still use the size slider to change the size of the eraser, and it appears as if it is erasing. Due to the work I was 
+            able to accomplish in my prototype I decided to next pursue a stretch goal: I wanted to show and hide a grid that users
+            could use to help them while drawing. - I first started exploring how I could hide and show something in p5. Found how
+            someone did it with a button, and since I was already using buttons I decided to try it that way. I first created a button
+            to show the grid, then a function that created a grid on the canvas, and a function that would show the grid when the
+            button was pressed. Once I was able to show it I now needed to add a way to remove it. I added a remove grid button and 
+            created a remove grid function. At first I thought about using hide, but when playing around with using it, it wasn't working.
+            I then thought about using erase here and tried that out by having it erase, then do the grid shape, and go to no erase. This
+            worked by following the shape of the grid to erase over it. Here is what the grid looked like: 
+            <br><img src="/images/finalProjectWithGrid.jpg"><br>
+            The final piece on my implementation plan was to add a special effect to the line, but since I was able to have the shapes be
+            stamped on or used to draw lines I decided against adding anything else as it could compromise the functionality of the others
+            or would require putting code in the draw function which would wipe away all the other work a user had done. Thus, I decided
+            to adjust some of the spacing to make it look nicer and got ready to deploy it. I followed the process I did for the prototype
+            by using rollup to bundle my work, installed gh pages, and added the neccessary scripts to build and deploy my site. Once it was 
+            ready I ran npm run deploy in the terminal and my site was live. Here is a picture of the final deployed project: 
+            <br><img src="/images/drawingAppFinal.jpg"><br>
         </p>
         <h3>Issue Deep-Dive</h3>
-        <p> When I decided to use buttons to draw with the lines and shapes I ran into an issue trying to get the line to happen<br>
-            when the line button was pressed and only when it was pressed. I first tried to take what I had in the mouse dragged <br>
-            function and put it into its own function and then tried to have it call a draw line function when in mouse dragged. <br>
-            Neither of these worked and I was getting frustrated with the line, so I took a break from the line to try the other<br>
-            shapes. However, I struggled when doing this as the line was getting in the way and I couldn't tell why it was only <br>
-            working when and where the button was pressed for the shapes. I commented out the line code, and found that instead of<br>
-            drawing the shape when the button was pressed I needed them to know to draw with the shape when the button is pressed.<br>
-            Thus, I created a currentShape variable that would change when each button was pressed. This way I could have the functions<br>
-            for when the buttons were pressed be about knowing what shape was wanted instead of drawing the shape. I used the currentShape<br>
-            variable to change to the shape of the button that was pushed and then tried to use that to have the shape drawn in the mouseDragged<br>
-            function. Even after doing this it was still not working correctly and I was not sure why. I had gotten so caught up in the fact <br>
-            that I could do the currentShape for all the shape buttons that I was trying to make them all functional at once. Since I was <br>
-            struggling to get the results I wanted with all of them I decided to take a step back and focus on only the line again as I had <br>
-            already made that functional in the prototype. I knew that it worked and could better identify what may be causing it not to work <br>
-            now that it was reliant on the currentShape variable. I tried to do an if statement within the mouseIsPressed if statement to see<br>
-            if the currentShape was "line", but that didn't work so I then did an && statement where it checked if the currentShape was line and <br>
-            if mouseIsPressed. This worked and I was able to have it only draw a line when the button was pressed. When reflecting on why this was <br>
-            an issue I saw that I was getting too ahead of myself and not slowing down. I had so much going on with the other shapes and was <br>
-            moving, deleting, and trying different things for each that it was hard to follow what I had/hadn't done. When I slowed down and <br>
+        <p> When I decided to use buttons to draw with the lines and shapes I ran into an issue trying to get the line to happen
+            when the line button was pressed and only when it was pressed. I first tried to take what I had in the mouse dragged 
+            function and put it into its own function and then tried to have it call a draw line function when in mouse dragged. 
+            Neither of these worked and I was getting frustrated with the line, so I took a break from the line to try the other
+            shapes. However, I struggled when doing this as the line was getting in the way and I couldn't tell why it was only 
+            working when and where the button was pressed for the shapes. I commented out the line code, and found that instead of
+            drawing the shape when the button was pressed I needed them to know to draw with the shape when the button is pressed.
+            Thus, I created a currentShape variable that would change when each button was pressed. This way I could have the functions
+            for when the buttons were pressed be about knowing what shape was wanted instead of drawing the shape. I used the currentShape
+            variable to change to the shape of the button that was pushed and then tried to use that to have the shape drawn in the mouseDragged
+            function. Even after doing this it was still not working correctly and I was not sure why. I had gotten so caught up in the fact 
+            that I could do the currentShape for all the shape buttons that I was trying to make them all functional at once. Since I was 
+            struggling to get the results I wanted with all of them I decided to take a step back and focus on only the line again as I had 
+            already made that functional in the prototype. I knew that it worked and could better identify what may be causing it not to work 
+            now that it was reliant on the currentShape variable. I tried to do an if statement within the mouseIsPressed if statement to see
+            if the currentShape was "line", but that didn't work so I then did an && statement where it checked if the currentShape was line and 
+            if mouseIsPressed. This worked and I was able to have it only draw a line when the button was pressed. When reflecting on why this was 
+            an issue I saw that I was getting too ahead of myself and not slowing down. I had so much going on with the other shapes and was 
+            moving, deleting, and trying different things for each that it was hard to follow what I had/hadn't done. When I slowed down and 
             just focused on one I was able to figure it out fairly quickly. 
         </p>
         <h3>Ideas and Future Work</h3>

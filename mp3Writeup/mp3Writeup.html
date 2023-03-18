@@ -6,6 +6,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/favicon_io/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </head>
   <body>
     <div class="page-container">
@@ -17,66 +19,66 @@
       </div>
         <h3>Overview & Usage</h3>
         <p>
-            This is a game where the player is a spirit trying to cross mulitple roads without getting hit by bad spirits. <br>
-            <img src="/images/gameWithBadSpirits.jpg" /> <br>
+            This is a game where the player is a spirit trying to cross mulitple roads without getting hit by bad spirits.
+           <br><img src="/images/gameWithBadSpirits.jpg" /> <br>
             To play use the arrow keys to move up, down, right, and left to make it to the other side of the screen to win.
-            If you get hit by a bad spirit then you lose and need to reload the page to play again.<br>
-            To try it out:<a href="https://sophiafavro.github.io/gameDesign/">Play Game Here</a> <br>
-            To download the source code visit the repository here:<a href="https://github.com/SophiaFavro/gameDesign">Repo Here</a>
+            If you get hit by a bad spirit then you lose and need to reload the page to play again.
+            <br>To try it out:<a href="https://sophiafavro.github.io/gameDesign/">Play Game Here</a> 
+            <br>To download the source code visit the repository here:<a href="https://github.com/SophiaFavro/gameDesign">Repo Here</a>
         </p>
         <h3>Development Process</h3>
         <p>
-            I first started by setting npm and adding my index html and js files. <br>
-            From there I added the start script and ran the neccessary commands to create a web dev sever, <br>
-            so that I would be able to test my game as I worked on it. Once I had all of this I added I then <br>
-            added the neccessary packages. I needed P5.play and P5, so I linked to the cdn in the html as there were issues <br>
-            with trying to use npm install in order to add them. From there I decided to start off by creating my game background. <br>
-            To do this I first created the canvas in the setup function and used the draw function to set the background to green for grass. <br>
+            I first started by setting npm and adding my index html and js files. 
+            From there I added the start script and ran the neccessary commands to create a web dev sever, 
+            so that I would be able to test my game as I worked on it. Once I had all of this I added I then
+            added the neccessary packages. I needed P5.play and P5, so I linked to the cdn in the html as there were issues 
+            with trying to use npm install in order to add them. From there I decided to start off by creating my game background. 
+            To do this I first created the canvas in the setup function and used the draw function to set the background to green for grass.
             I then created the roads by making a roads function called in draw that had a forloop to create the rectangles and space them out 
-            evenly across the window and set the color to grey. <br>
-            Below is a picture of the finished background. <br>
-            <img src="/images/gameBackground.jpg" /> <br>
-            Now that the background was complete it was time to create the sprite that would be used to get across all the roads. <br>
-            I created a spirit setup function to create the sprite, make a circle, change its color, and give it a starting position. <br>
-            I also decided to create a function for the movement of the spirit that moved the spirit based on the arrow keys. <br>
+            evenly across the window and set the color to grey. 
+            Below is a picture of the finished background. 
+           <br><img src="/images/gameBackground.jpg" /><br>
+            Now that the background was complete it was time to create the sprite that would be used to get across all the roads. 
+            I created a spirit setup function to create the sprite, make a circle, change its color, and give it a starting position. 
+            I also decided to create a function for the movement of the spirit that moved the spirit based on the arrow keys. 
             I ran into some trouble at this stage and you can see the issue Deep-Dive below for some insight. After I had resolved the issue
-            the spirit was now showing on the screen. However, even though the movement function was not causing the issue I faced, it was not working. <br>
+            the spirit was now showing on the screen. However, even though the movement function was not causing the issue I faced, it was not working. 
             I tried a few different ways to cause movement of the spirit, but the one that worked was checking if the keycode was the matching arrow
             code and if it was pressed, then the spirits x/y would be +/- 1. Now that I had the spirit the user would play as showing on screen and moving, it
-            was time to create the bad spirits. <br>
+            was time to create the bad spirits. 
             To create the bad spirits I added a enemies setup function that would add enemies on the roads. I first set the diameter, color, and y position. 
             Then I added a while loop that kept going until the group length was larger than the winow width. In this while loop I changed the x position of 
             each enemy as to have them land on each road by creating an enemy every 50 px, but only had it visible if it were on a road by changing the visibility
-            if it was an odd index.<br> Here is what it looked like now <br>
-            <img src="/images/gameWithBadSpirits.jpg" /> <br>
-            Now I needed to have the bad spirits/enemies move along the road. To do this I created an enemies movement function that would change the y position of the enemies.<br>
+            if it was an odd index. Here is what it looked like now: 
+           <br><img src="/images/gameWithBadSpirits.jpg" /><br>
+            Now I needed to have the bad spirits/enemies move along the road. To do this I created an enemies movement function that would change the y position of the enemies.
             Since the function would be in the draw function and would be drawn over and over again I was able to set the y postion of the enemies to increase by 2. I then added 
-            an if statement that checked if the y position of the enemies was greater than the window height and if it was would put the position back to 0. Thus, giving the enemies a looping effect.<br>
-            Now that the enemies were moving, the only thing left to do for the game to work was to have it end. The way that the game ends is if the spirit/user hits a bad spirit/enemy or the reach the otherside of the screen.<br>
-            In order to have it end I created an end game function that would check if the spirit collided with an enemy or if it was past the window size, and put up a game over message. <br>
-            To do this I used an if statement to check for the cases and if either were true then it would hide the spirt and enemies, stop the draw function loop, and show the message. <br>
+            an if statement that checked if the y position of the enemies was greater than the window height and if it was would put the position back to 0. Thus, giving the enemies a looping effect.
+            Now that the enemies were moving, the only thing left to do for the game to work was to have it end. The way that the game ends is if the spirit/user hits a bad spirit/enemy or the reach the otherside of the screen.
+            In order to have it end I created an end game function that would check if the spirit collided with an enemy or if it was past the window size, and put up a game over message.
+            To do this I used an if statement to check for the cases and if either were true then it would hide the spirt and enemies, stop the draw function loop, and show the message.
             I then called the function in the draw function and tested it out. During this I found that it was ending even when it wasn't hitting the bad spirits.I realized that this was 
             happening becuase I was only hiding the bad spirits/enemies not on the roads. Due to this I went back and adjusted the enemeies setup function to not hide any and figured out how 
-            to have them on the roads with just changing the spacing equation. <br> Once I did this it was ending the game at the correct times and everything was working great. <br>
+            to have them on the roads with just changing the spacing equation. Once I did this it was ending the game at the correct times and everything was working great.
             Finally, the game was done and it was time to bundle and deploy it. 
         </p>
         <h3>Issue Deep-Dive</h3>
         <p>
-            An issue I ran into when working on this project arose when I went to add the spirit. The spirit is a sprite that requires creating a function to set it up. <br>
-            I created a function to make the spirit and to set how it moves when the arrows are pressed. I then called these functions respectively in the setup and draw functions. <br>
+            An issue I ran into when working on this project arose when I went to add the spirit. The spirit is a sprite that requires creating a function to set it up. 
+            I created a function to make the spirit and to set how it moves when the arrows are pressed. I then called these functions respectively in the setup and draw functions. 
             Once I did this and ran the dev server to see if it worked, I was met with a white screen. I was not sure what was broken at first and started to debug. There were no errors, so 
-            I first started by commenting out the calls for the spirit functions to make sure that my background was working. When I did so the background was back and working correctly.<br>
-            From there I thought that there might be something wrong with spirit functions, so I checked what would happen if I commented at one function and tried running it with only one function called.<br>
+            I first started by commenting out the calls for the spirit functions to make sure that my background was working. When I did so the background was back and working correctly 
+            From there I thought that there might be something wrong with spirit functions, so I checked what would happen if I commented at one function and tried running it with only one function called 
             When I commented out the spirit setup function the background still showed up, so I knew that there wasn't an error happening that VSCode wasn't catching when it ran. Once I commented out the 
-            the function for movement and kept the spirit setup. When I ran it this time I was met with the original error of a white screen. I now started commenting out individual lines in this function to see <br>
+            the function for movement and kept the spirit setup. When I ran it this time I was met with the original error of a white screen. I now started commenting out individual lines in this function to see 
             if there was a problem in the function that was causing the error. During this process I kept getting met with the error, so I thought it might have to do with the libaries not being imported correctly. 
             I started looking at my html and double checked that everything was correct in that file. It was so I just started looking through everything. I was then able to find when I hovered over the new Sprite 
-            line in the spirit setup function a popup appeared that said it did not recongize the command. I did not know how I missed this and realized that this was causing the issue. I started to search and play <br>
+            line in the spirit setup function a popup appeared that said it did not recongize the command. I did not know how I missed this and realized that this was causing the issue. I started to search and play 
             around with how I could create a Sprite. I tried a different format, using createSprite, and added to the libraries I had in case there was something missing. None of this worked, so I tried to create a new Sprite
             directly in the setup function and it worked. I now had to figure out why it would work when in the setup function, but not when I had it in the setupSpirit function I had. I tired changing the location of the 
             setupSpirit function to be above the setup function, and tried to copy and pasting in case I was missing a spelling error. Nothing worked and I thought that I would need to ask for a second opinion I realized what the 
-            problem was-I had setupSpirit instead of spiritsetup. This was causing an issue as there can only be one setup function, and I think that by having the name start with setup it thought I was trying to add another. <br>
-            I was curious why you can only have one and found the responses to this stackoverflow explained it nicely.  <a href="https://stackoverflow.com/questions/56959733/how-does-the-setup-function-in-p5-js-work">stackoverflow link</a><br>
+            problem was-I had setupSpirit instead of spiritsetup. This was causing an issue as there can only be one setup function, and I think that by having the name start with setup it thought I was trying to add another. 
+            I was curious why you can only have one and found the responses to this stackoverflow explained it nicely.  <a href="https://stackoverflow.com/questions/56959733/how-does-the-setup-function-in-p5-js-work">stackoverflow link</a>
             I am not sure what else could be the problem as when I changed the name it started to work correctly, but plan on asking on some opensource spaces to see if there is another reason that I was unable to find. 
             This issue was easy to fix, but it was very difficult for me to spot and forced me to have to stop and take a deeper look at all of my code. It reminded me of the importance of naming conventions, caused me to understand 
             p5 better, and explore many possible solutions. Due to running into this issue I know that I will never use setup at the beginning of a function name when working with p5 and will be able to avoid this kind of error in the future. 

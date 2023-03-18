@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/favicon_io/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div class="page-container">
@@ -17,73 +18,71 @@
       </div>
         <h3>Overview & Usage</h3>
         <p>
-            This is a paint app where you can paint by choosing a color from the color picker<br>
-            on the side and press the mouse. When you are done painting your picture, hit the <br>
-            save button to download your picture.<br>
-            <a href="https://sophiafavro.github.io/PictureMaker/">Try Here</a>
-            <a href="https://github.com/SophiaFavro/PictureMaker">Repo Here</a>
+            This is a paint app where you can paint by choosing a color from the color picker
+            on the side and press the mouse. When you are done painting your picture, hit the 
+            save button to download your picture.
+            <br><a href="https://sophiafavro.github.io/PictureMaker/">Try Here</a>
+            <br><a href="https://github.com/SophiaFavro/PictureMaker">Repo Here</a>
         </p>
         <h3>Development Process</h3>
         <p> 
-            I first Ran npm init, added index.html, index.js, and added start script to create local server to run it.<br>
-            I then Created canvas and made it to be proportionate to the window size. <br>
-            From there went to create the shape and color picker. For the shape picker <br>
-            I created the shapes and decided that in order to have them choose the shape <br>
-            they would hit a key. In order to do this I added the key to press in order to<br>
-            select the shape. Then for the color picker I originally planned to have set <br>
-            colors to choose from, but I was able to find a color picker in the p5 documentation<br>
-            and decided to do that instead. Once I had added the color picker my project now looked like this.<br>
-            <img src="/images/finalPrototypePickersPic.jpg">
-            <br>
-            Now it was time to allow users to draw on the canvas. To do this I first played around <br>
-            with mouse dragged and shapes as I had seen this in the p5 documentation. I created a <br>
-            mouseDragged function that would fill with the color picker selected color and drew circles.<br> 
-            Once this worked and I was able to switch between colors and have it draw the circles it<br>
-            was time to have it draw a line instead. To do this I first tried changing the function <br>
-            to be mousePressed and having the line be with mouseX, mouseY, pmouseX, pmouseY. This did<br>
-            not work, so I went back to mouseDragged and added in an if statement to check if mouse is<br>
-            pressed then draw the line I tried before. This worked and I was able to draw the lines, but<br>
-            it was not using the color picker color. At first I tried moving around the fill, but when <br>
-            this did not work I tried just setting fill to a set color which also did not work. I went <br>
-            back to the p5 documentation and was able to find that stroke is how you set the color of lines.<br>
-            I had misread before and though that this was how you set the thickness of the line, so I was<br>
-            glad I went back and checked. Once I added the stroke with the color picker color I was able <br>
-            to draw continuous lines and change the color in between using the color picker. The final piece<br>
-            I needed to complete this prototype was to add a way for the user to save the canvas to their computer.<br>
-            Thanks to a tip from Hannah I knew that p5 could do this, so I went to the p5 documentation to<br>
-            see how to add this feature. I first created a save button and set its position below the future<br>
-            shapes and color picker. I then created a saveCanvas function that used save(“filename”); in order<br>
-            to save the canvas as image to the users computer. Then I added a statement for when the button is<br>
-            pressed by the mouse it uses the saveCanvas function. When I ran npm start to see if it worked nothing<br>
-            happened when I pushed the button. I used inspect to see what was happening when I pushed the button <br>
-            and saw that I was getting a typeError. I was not sure what was causing this, so I looked at a p5 example<br>
-            where they had the function as saveImage instead of saveCanvas, so I decided to switch mine to see if it<br>
-            would fix the issue. Once I changed the function to saveImage the save button worked. I'm not sure why <br>
-            this happened, but wonder if it is because I am trying to have the canvas save as an image and not another<br>
-            canvas, but plan to do some more digging. Once I had the save button working my prototype was complete and<br>
-            now looked like this<br>
-            <img src="/images/finishedPrototypePic.jpg">
-            <br>
-            Now I needed to bundle with rollup in order to get it ready to deploy. To do this I installed rollup,<br>
-            installed node-resolve plugin, installed the copy plugin, created a config file for rollup, added a <br>
-            build script to the scripts in package.json, and ran build. From there I needed to get it ready to push<br>
-            to GitHub, so I added a git ignore file to ignore the files that contained what was already in my<br>
-            code(ie node_modules and dist) and pushed to GitHub. Finally, I needed to deploy my site. To do this <br>
-            I installed gh-pages, added a deploy script to package.json scripts, and in the terminal put rpm run deploy.<br>
-            When I first went nothing was showing up and when I inspected I found some issues that led me to make some<br>
-            changes to my config file as I knew from the game design project that since I was using cdn for the<br>
+            I first Ran npm init, added index.html, index.js, and added start script to create local server to run it.
+            I then Created canvas and made it to be proportionate to the window size. 
+            From there went to create the shape and color picker. For the shape picker 
+            I created the shapes and decided that in order to have them choose the shape 
+            they would hit a key. In order to do this I added the key to press in order to
+            select the shape. Then for the color picker I originally planned to have set 
+            colors to choose from, but I was able to find a color picker in the p5 documentation
+            and decided to do that instead. Once I had added the color picker my project now looked like this.
+            <br><img src="/images/finalPrototypePickersPic.jpg"><br>
+            Now it was time to allow users to draw on the canvas. To do this I first played around 
+            with mouse dragged and shapes as I had seen this in the p5 documentation. I created a 
+            mouseDragged function that would fill with the color picker selected color and drew circles. 
+            Once this worked and I was able to switch between colors and have it draw the circles it
+            was time to have it draw a line instead. To do this I first tried changing the function 
+            to be mousePressed and having the line be with mouseX, mouseY, pmouseX, pmouseY. This did
+            not work, so I went back to mouseDragged and added in an if statement to check if mouse is
+            pressed then draw the line I tried before. This worked and I was able to draw the lines, but
+            it was not using the color picker color. At first I tried moving around the fill, but when 
+            this did not work I tried just setting fill to a set color which also did not work. I went 
+            back to the p5 documentation and was able to find that stroke is how you set the color of lines.
+            I had misread before and though that this was how you set the thickness of the line, so I was
+            glad I went back and checked. Once I added the stroke with the color picker color I was able 
+            to draw continuous lines and change the color in between using the color picker. The final piece
+            I needed to complete this prototype was to add a way for the user to save the canvas to their computer.
+            Thanks to a tip from Hannah I knew that p5 could do this, so I went to the p5 documentation to
+            see how to add this feature. I first created a save button and set its position below the future
+            shapes and color picker. I then created a saveCanvas function that used save(“filename”); in order
+            to save the canvas as image to the users computer. Then I added a statement for when the button is
+            pressed by the mouse it uses the saveCanvas function. When I ran npm start to see if it worked nothing
+            happened when I pushed the button. I used inspect to see what was happening when I pushed the button 
+            and saw that I was getting a typeError. I was not sure what was causing this, so I looked at a p5 example
+            where they had the function as saveImage instead of saveCanvas, so I decided to switch mine to see if it
+            would fix the issue. Once I changed the function to saveImage the save button worked. I'm not sure why 
+            this happened, but wonder if it is because I am trying to have the canvas save as an image and not another
+            canvas, but plan to do some more digging. Once I had the save button working my prototype was complete and
+            now looked like this
+            <br><img src="/images/finishedPrototypePic.jpg"><br>
+            Now I needed to bundle with rollup in order to get it ready to deploy. To do this I installed rollup,
+            installed node-resolve plugin, installed the copy plugin, created a config file for rollup, added a 
+            build script to the scripts in package.json, and ran build. From there I needed to get it ready to push
+            to GitHub, so I added a git ignore file to ignore the files that contained what was already in my
+            code(ie node_modules and dist) and pushed to GitHub. Finally, I needed to deploy my site. To do this 
+            I installed gh-pages, added a deploy script to package.json scripts, and in the terminal put rpm run deploy.
+            When I first went nothing was showing up and when I inspected I found some issues that led me to make some
+            changes to my config file as I knew from the game design project that since I was using cdn for the
             packages I needed to add treeshake false. Finally, I went to the site and was able to see my site up and running. 
         </p>
         <h3>Issue Deep-Dive</h3>
         <p>
-            I tried to add a rectangle and was unable to. At first I thought it was because I was in the setup<br>
-            function. This confused me as I had a circle in the setup function that was working. At first I thought<br>
-            it may be due to the fill and it was not filling the second shape, so I added another fill before the <br>
-            second shape. When this didn't fix it I thought it may be due to it being a different shape, and tried<br>
-            adding another circle instead. Once I did this the second circle appeared. Now that I knew it could work<br>
-            I decided to look at the rectangle documentation and see if it wasn't working with the rectangle because<br>
-            I had not declared it correctly. When I did this I quickly realized that I had written “rectangle” and not <br>
-            “rect” when I was trying to draw it. Once I tried again with “rect” the rectangle was showing up. It reminded<br>
+            I tried to add a rectangle and was unable to. At first I thought it was because I was in the setup
+            function. This confused me as I had a circle in the setup function that was working. At first I thought
+            it may be due to the fill and it was not filling the second shape, so I added another fill before the 
+            second shape. When this didn't fix it I thought it may be due to it being a different shape, and tried
+            adding another circle instead. Once I did this the second circle appeared. Now that I knew it could work
+            I decided to look at the rectangle documentation and see if it wasn't working with the rectangle because
+            I had not declared it correctly. When I did this I quickly realized that I had written “rectangle” and not 
+            “rect” when I was trying to draw it. Once I tried again with “rect” the rectangle was showing up. It reminded
             me of how syntax errors can cause issues and take time to fix when not caught. 
         </p>
         <h3>Ideas and Future Work</h3>
@@ -95,44 +94,44 @@
         </ul>
         <h3>Project Scope</h3>
         <p>
-            After completing the prototype I was able to remove the set colors and do the color picker earlier.<br>
-            This means that I do not need to worry about adding it for the final and could add a different feature instead.<br>
-            Also, while exploring how to change the shapes when drawing I saw many intresting ways to add changes to the line<br>
-            while drawing, and it made me realize that I could focus more on changing the weight of the line or possibly doing <br>
-            special effects when drawing with lines. The other change that I would like to make is having everything move/be <br>
-            responsive with window change. I started out wanting to do this, but it was hard to deal with when just trying to <br>
-            have everything work. Thus, I would like to try to make this a goal for the final project. The last change to scope <br>
-            would be not doing the downloading steps. Orginally, I thought I was going to have to add another package to allow <br>
-            users to download an image of the canvas as a pdf, but once save worked and worked quickly I realized that the <br>
-            downloading steps would be useless. Instead, I would like to explore one of my possible stretch goals. My plan <br>
-            is to explore the ones I included, but also want to be open to adding something else if I stumble upon something <br>
+            After completing the prototype I was able to remove the set colors and do the color picker earlier.
+            This means that I do not need to worry about adding it for the final and could add a different feature instead.
+            Also, while exploring how to change the shapes when drawing I saw many intresting ways to add changes to the line
+            while drawing, and it made me realize that I could focus more on changing the weight of the line or possibly doing 
+            special effects when drawing with lines. The other change that I would like to make is having everything move/be 
+            responsive with window change. I started out wanting to do this, but it was hard to deal with when just trying to 
+            have everything work. Thus, I would like to try to make this a goal for the final project. The last change to scope 
+            would be not doing the downloading steps. Orginally, I thought I was going to have to add another package to allow 
+            users to download an image of the canvas as a pdf, but once save worked and worked quickly I realized that the 
+            downloading steps would be useless. Instead, I would like to explore one of my possible stretch goals. My plan 
+            is to explore the ones I included, but also want to be open to adding something else if I stumble upon something 
             more benefical/intresting and don't want to set what I'll add instead just yet. 
         </p>
         <h3>Time Management</h3>
         <p>
-            I think that it took me about the time I expected it too, but I was surprised by where I got stuck.<br>
-            Some of the steps that I thought would be easier/allow me to create something functional where difficult<br>
-            and I was able to find the information for steps I planned for the final while looking to make the "easier"<br>
-            ones functional. It made me have to rethink my process, and slowed me down for some features but made me <br>
-            progress for features for the final. I defiently think that I need to include more time for exploring/playing<br>
+            I think that it took me about the time I expected it too, but I was surprised by where I got stuck.
+            Some of the steps that I thought would be easier/allow me to create something functional where difficult
+            and I was able to find the information for steps I planned for the final while looking to make the "easier"
+            ones functional. It made me have to rethink my process, and slowed me down for some features but made me 
+            progress for features for the final. I defiently think that I need to include more time for exploring/playing
             around for the final.
         </p>
         <h3>Implementation Plan</h3>
         <p>
-            When looking at how to select shapes I originally thought that this would be easier<br>
-            than drawing lines and having it save. However, when looking at how to do this I wasn't<br>
-            able to find anything in the documentation where I could have it switch between shapes, but <br>
-            quickly found a way to draw lines. Thus, I decided to switch to have the choosing shapes<br>
-            be for the final project and included the line drawing as the default in this one(the prototype).<br>
-            The other change came when looking at having set colors. When looking for the shape picker <br>
-            I was able to find a color picker in the p5 documentation, and realized that I could add<br>
-            that now instead of taking the time to do the set colors only to replace it later. <br>
-            In terms of additions, in my project scope I talk about how I plan to include making everything <br>
-            move/responsive with different window sizes as I think it would be beneficial if someone wanted <br>
-            to draw a smaller picture and still have access to the tools without having to resize the window.<br>
-            I also plan on including one of my stretch goals or something equivalent based on what I find when exploring<br>
-            as I was able to do some of the steps I thought would be more difficult during this process. Finally, <br>
-            I would like to add a special effect for the line drawing as I saw many options when working on this part<br>
+            When looking at how to select shapes I originally thought that this would be easier
+            than drawing lines and having it save. However, when looking at how to do this I wasn't
+            able to find anything in the documentation where I could have it switch between shapes, but 
+            quickly found a way to draw lines. Thus, I decided to switch to have the choosing shapes
+            be for the final project and included the line drawing as the default in this one(the prototype).
+            The other change came when looking at having set colors. When looking for the shape picker 
+            I was able to find a color picker in the p5 documentation, and realized that I could add
+            that now instead of taking the time to do the set colors only to replace it later. 
+            In terms of additions, in my project scope I talk about how I plan to include making everything 
+            move/responsive with different window sizes as I think it would be beneficial if someone wanted 
+            to draw a smaller picture and still have access to the tools without having to resize the window.
+            I also plan on including one of my stretch goals or something equivalent based on what I find when exploring
+            as I was able to do some of the steps I thought would be more difficult during this process. Finally, 
+            I would like to add a special effect for the line drawing as I saw many options when working on this part
             and think that I could include one of them. 
         </p>
     </div>

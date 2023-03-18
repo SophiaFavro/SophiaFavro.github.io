@@ -21,11 +21,11 @@ body {
 
 img {
     max-width: 100%;
-    height: 10rem;
     border: .25rem;
     padding-bottom: 2rem;
     padding-top: 1rem;
   }
+
   a {
     padding: 1rem;
   }

@@ -21,26 +21,26 @@
             where you can create a to-do list and recieve encouraging words from your buddy. 
             The best way to run this code is to download the file, and then unpack the file in the extensions menu of your browser and pin it so it shows in the taskbar. 
             <br>Here is a link to the repository:<a href="https://github.com/SophiaFavro/bookmarker-extension">Extension Code</a>
-            <br><img src="/images/filledOutExtensionList.png" />
+            <br><img src="/images/filledOutExtensionList.png" alt="popup labeled study buddy with title todo list, place for user input with button for add task and done buttons next to tasks in list" />
         </p>
         <h3>Development Process</h3>
         <p>I knew I wanted there to be a popup, so I used the "hello world" example and customized it for my project. 
             I did this by adding my own icon and adusting the styling, manifest, html, and JavaScript console log.
-            <br><img src="/images/customizedIconStage.jpeg" /><br> 
+            <br><img src="/images/customizedIconStage.jpeg" alt="popup titled study buddy with phrase below keep up the good work!"/><br> 
             After the popup was complete it was time to start working on the to-do list. I started out by creating a button to add tasks to the list. 
             As well as creating an input for the user to be able to type in their task. 
-            <br><img src="/images/toDoListButton.jpeg" /><br>
+            <br><img src="/images/toDoListButton.jpeg" alt="popup titled study buddy with todo list label below and place for user input with add task button"/><br>
             I then needed to create an event handler that would be able to listen for when the "add task" button was clicked in order to take the input, 
             and add it to the list in the popup. To do this it was time to start working in my js file. I started by creating variables for the button, user input, and list. 
             Then creating a function for when the "add task" button was clicked that would add the input to the list and give the list item a "done" button for when the task was complete. 
             Below is the list filled out with the tasks and you can see each has a "done" button that when clicked removes the item. 
-            <br><img src="/images/filledOutExtensionList.png" /><br>
+            <br><img src="/images/filledOutExtensionList.png" alt="popup labeled study buddy with title todo list, place for user input with button for add task and done buttons next to tasks in list"/><br>
         </p>
         <h3>Issue Deep-Dive</h3>
         <p>Once I added the button for adding a task and input I ran into an issue having the items added to the list and visible in the popup. 
             I was able to type in a task and click the "add task" button, but it would just dissapear instead of being added below. To go about fixing this
             I decided to add "console.log" within my event hadler for clicking on the button that would log the input(what was typed in by user).
-            <br><img src="/images/MP1IssueConsoleLog.jpg" /><br> 
+            <br><img src="/images/MP1IssueConsoleLog.jpg" alt="console log with keep up good work, and finish hw, and popup on right"/><br> 
             As you can see the console was logging it, so I knew that my event handler was working. I thought maybe the length had something to do with why it wasn't appearing,
             but when I tried just "add" it still wasn't appearing. Due to this I decided to look and see if there was an issue in my html or css files instead of my js file. 
             I looked line by line to make sure that everything was matching and there were no syntax issues. While doing this in the html I saw my empty list ("ul") tags and thought 

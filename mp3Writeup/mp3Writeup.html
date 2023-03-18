@@ -20,7 +20,7 @@
         <h3>Overview & Usage</h3>
         <p>
             This is a game where the player is a spirit trying to cross mulitple roads without getting hit by bad spirits.
-           <br><img src="/images/gameWithBadSpirits.jpg" /> <br>
+           <br><img src="/images/gameWithBadSpirits.jpg" alt="green and grey stripes with red circles at top of grey stripes, and one light blue circle on leftmost green stripe" /> <br>
             To play use the arrow keys to move up, down, right, and left to make it to the other side of the screen to win.
             If you get hit by a bad spirit then you lose and need to reload the page to play again.
             <br>To try it out:<a href="https://sophiafavro.github.io/gameDesign/">Play Game Here</a> 
@@ -37,7 +37,7 @@
             I then created the roads by making a roads function called in draw that had a forloop to create the rectangles and space them out 
             evenly across the window and set the color to grey. 
             Below is a picture of the finished background. 
-           <br><img src="/images/gameBackground.jpg" /><br>
+           <br><img src="/images/gameBackground.jpg" alt="green and grey stripes across full screen"/><br>
             Now that the background was complete it was time to create the sprite that would be used to get across all the roads. 
             I created a spirit setup function to create the sprite, make a circle, change its color, and give it a starting position. 
             I also decided to create a function for the movement of the spirit that moved the spirit based on the arrow keys. 
@@ -50,7 +50,7 @@
             Then I added a while loop that kept going until the group length was larger than the winow width. In this while loop I changed the x position of 
             each enemy as to have them land on each road by creating an enemy every 50 px, but only had it visible if it were on a road by changing the visibility
             if it was an odd index. Here is what it looked like now: 
-           <br><img src="/images/gameWithBadSpirits.jpg" /><br>
+           <br><img src="/images/gameWithBadSpirits.jpg" alt="green and grey stripes with red circles at top of grey stripes, and one light blue circle on leftmost green stripe"/><br>
             Now I needed to have the bad spirits/enemies move along the road. To do this I created an enemies movement function that would change the y position of the enemies.
             Since the function would be in the draw function and would be drawn over and over again I was able to set the y postion of the enemies to increase by 2. I then added 
             an if statement that checked if the y position of the enemies was greater than the window height and if it was would put the position back to 0. Thus, giving the enemies a looping effect.

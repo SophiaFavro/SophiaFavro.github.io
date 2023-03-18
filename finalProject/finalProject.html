@@ -30,13 +30,13 @@
             the instructions for the key strokes stayed on the canvas when it was saved and wanted it to only be the picture.
             I talk about getting the button for drawing with line working in the issue deep dive. I struggled at first, but
             once I got the line version working it was easy to do it for the other shapes as well. Here is what it looked like:
-            <br><img src="/images/DrawingAppWithButtons.jpg"><br>
+            <br><img src="/images/DrawingAppWithButtons.jpg" alt="grey screen with buttons labeled circle, square, rectangle, line, and save"><br>
             I then wanted to add a clear button and used p5 clear in a function, so when the button was pressed it would 
             clear the canvas. Next I created a slider using p5, thats value would determine the size of the lines/shapes.
             When I did this I needed to switch the position of the buttons and adjust the canvas. The reason being that 
             when the slider was used it would cause shapes/lines to be drawn on it, and I didn't want that to ruin any 
             of the users picture. Here is what it looked like once I made these changes: 
-            <br><img src="/images/drawingAppButtonsMoved.jpg"><br>
+            <br><img src="/images/drawingAppButtonsMoved.jpg" alt="grey screen with blue flower and buttons on right white stripe"><br>
             Next I started looking at how to make the page/elements responsive to changes in window size, but when I looked
             at p5's window resize I saw that it does this by running draw. The problem with this is that my project works by 
             not doing anything in draw because if I were to then it would get rid of anything the user had created by redrawing
@@ -57,14 +57,14 @@
             created a remove grid function. At first I thought about using hide, but when playing around with using it, it wasn't working.
             I then thought about using erase here and tried that out by having it erase, then do the grid shape, and go to no erase. This
             worked by following the shape of the grid to erase over it. Here is what the grid looked like: 
-            <br><img src="/images/finalProjectWithGrid.jpg"><br>
+            <br><img src="/images/finalProjectWithGrid.jpg" alt="black line grid on grey background with buttons on right side white stripe"><br>
             The final piece on my implementation plan was to add a special effect to the line, but since I was able to have the shapes be
             stamped on or used to draw lines I decided against adding anything else as it could compromise the functionality of the others
             or would require putting code in the draw function which would wipe away all the other work a user had done. Thus, I decided
             to adjust some of the spacing to make it look nicer and got ready to deploy it. I followed the process I did for the prototype
             by using rollup to bundle my work, installed gh pages, and added the neccessary scripts to build and deploy my site. Once it was 
             ready I ran npm run deploy in the terminal and my site was live. Here is a picture of the final deployed project: 
-            <br><img src="/images/drawingAppFinal.jpg"><br>
+            <br><img src="/images/drawingAppFinal.jpg" alt="grey screen with right white stripe and buttons"><br>
         </p>
         <h3>Issue Deep-Dive</h3>
         <p> When I decided to use buttons to draw with the lines and shapes I ran into an issue trying to get the line to happen

@@ -19,7 +19,7 @@
     transition-duration: 3s;
     transition-delay: 1s;
     transition-property: font-size;
-    font-family: Times;
+    font-family:  "Helvetica";
   }
 
   h1:hover {
@@ -34,6 +34,6 @@
 
   li {
     margin-bottom: 2rem;
-    font-family: "times new roman";
+    font-family: "Helvetica";
     list-style: outside;
   }

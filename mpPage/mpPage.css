@@ -6,7 +6,7 @@
 
 body {
     background-color: rgb(223, 223, 253);
-    font-family: "times new roman";
+    font-family: "Helvetica";
     color: black;
     font-size: larger;
   }
@@ -24,6 +24,6 @@ img {
 
   li {
     margin-bottom: 2rem;
-    font-family: "times new roman";
+    font-family: "Helvetica";
     list-style: outside;
   }
